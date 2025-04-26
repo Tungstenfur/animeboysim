@@ -1,0 +1,44 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:StanislawSim2025.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="StanislawSim2025.Views.MainView"
+             x:DataType="vm:MainViewModel">
+  <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <vm:MainViewModel />
+  </Design.DataContext>
+
+    <Grid>
+        <Label HorizontalAlignment="Center" FontSize="50">Stanisław Maternik Simulator</Label>
+        <Button Width="120" Height="70" Click="Button_OnClick" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" FontSize="15" TextAlignment="Center">Oglądaj Anime Dziewczynki</TextBlock>
+            </Button.Content>
+        </Button>
+        <TextBlock Name="aTB" VerticalAlignment="Center" TextAlignment="Center" Margin="0,0,0,130">Obejrzałeś 0 anime dziewczynek</TextBlock>
+        <ScrollViewer Width="300" Height="350" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+            <StackPanel Name="upgradePanel">
+                <Border BorderBrush="Black" BorderThickness="2" CornerRadius="5" Name="upg1">
+                    <Grid>
+                        <Label FontSize="50">🥭</Label>
+                        <Label Margin="70,0,0,0" FontSize="15">Mango, manga</Label>
+                        <Label Margin="70,20,0,0">Przeczytaj mange (+2)</Label>
+                        <Button Height="30" Width="200" VerticalAlignment="Bottom" HorizontalAlignment="Right" Content="Kup (50 ad)" Name="upgd1" Click="Upgd1_OnClick"></Button>
+                    </Grid>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="2" CornerRadius="5" Name="upg2">
+                    <Grid>
+                        <Label FontSize="50">📙</Label>
+                        <Label Margin="70,0,0,0" FontSize="15">Jakaś Książka o anime</Label>
+                        <Label Margin="70,20,0,0">Family friendly niestety (+3)</Label>
+                        <Button Height="30" Width="200" VerticalAlignment="Bottom" HorizontalAlignment="Right" Content="Kup (175 ad)" Name="upgd2" Click="Upgd2_OnClick"></Button>
+                    </Grid>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
